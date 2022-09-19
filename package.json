@@ -1,6 +1,6 @@
 {
-  "name": "checksslcertificate",
-  "version": "1.0.5",
+  "name": "@dmitryusenko/checksslcertificate",
+  "version": "1.0.6",
   "author": {
     "name": "Patrick Weingärtner",
     "email": "patrick.weingaertner91@gmail.com"
@@ -31,12 +31,8 @@
     "prepublishOnly": "yarn build && yarn test && yarn pretty",
     "preversion": "yarn pretty"
   },
-  "dependencies": {
-    "yargs": "^15.3.1"
-  },
   "devDependencies": {
     "@types/node": "^13.9.2",
-    "@types/yargs": "^15.0.4",
     "chai": "^4.2.0",
     "mocha": "7.1.1",
     "prettier": "1.19.1",

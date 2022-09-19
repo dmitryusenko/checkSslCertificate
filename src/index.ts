@@ -2,7 +2,6 @@
 
 import * as https from 'https'
 import { TLSSocket } from 'tls'
-import yargs from 'yargs'
 
 export interface UrlObject {
     hostname: string
@@ -58,43 +57,4 @@ export default function checkSslCertificate(obj: UrlObject): Promise<SslCheckRes
 
         req.end()
     })
-}
-
-const runningAsScript = !module.parent
-
-if (runningAsScript) {
-    const argv = yargs
-        .usage(
-            'Check if a SSL certificate for a given hostname is valid.\n' +
-                'Usage: checkSslCertificate({hostname: "example.com"})'
-        )
-        .help('help')
-        .option('hostname', {
-            type: 'string',
-            alias: 'h',
-            demandOption: true
-        })
-        .option('method', {
-            description: 'E.g. GET or HEAD',
-            default: 'HEAD',
-            alias: 'm'
-        })
-        .option('path', {
-            type: 'string',
-            description: 'E.g. /foo',
-            default: ''
-        })
-        .option('port', {
-            type: 'number',
-            description: 'E.g. 443',
-            default: 443
-        })
-        .demandOption('hostname').argv
-
-    checkSslCertificate({
-        hostname: argv.hostname,
-        path: argv.path,
-        port: argv.port,
-        method: argv.method
-    } as UrlObject).then(result => console.log(result))
 }

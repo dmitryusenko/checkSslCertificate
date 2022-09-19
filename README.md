@@ -3,8 +3,7 @@
 
 A module which allows you to check the certificate of a given hostname is valid.
 
-- Typescript support 
-- Module import or usage via CLI
+- Typescript support
 
 This module returns a Promise which will always resolve.
 
@@ -13,30 +12,20 @@ In case of an error the returned object will contain have an error property.
 ## Installation
 To install this package run:
 ```bash
-$ npm install checkSslCertificate --save 
+$ npm install @dmitryusenko/checksslcertificate --save 
 # Or
-$ yarn add checkSslCertificate
-```
-For the usage via CLI it is recommended to install the package globally.
-```bash
-$ npm install -g checkSslCertificate
-# Or
-$ yarn global add checkSslCertificate
+$ yarn add @dmitryusenko/checksslcertificate
 ```
 
 ## Usage
 ```js
-import checkSslCertificate from 'checkSslCertificate'
+import checkSslCertificate from '@dmitryusenko/checksslcertificate'
 // or 
-// const checkSslCertificate = require('checkSslCertificate').default
+// const checkSslCertificate = require('@dmitryusenko/checksslcertificate').default
 
 checkSslCertificate({hostname: 'github.com'}).then(res => {
    console.log(res)
 })
-```
-or from command line
-```bash
-checksslcertificate -h example.com 
 ```
 
 ## Options
