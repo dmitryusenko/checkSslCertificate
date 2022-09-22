@@ -1,5 +1,5 @@
 const expect = require('chai').expect
-const checkSslCertificate = require('../dist/index').default
+const { checkSslCertificate } = require('../dist/index')
 
 describe('checkSslCertificate', function() {
     it('should resolve when passing only a hostname', async () => {

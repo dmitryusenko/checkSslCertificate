@@ -18,7 +18,7 @@ export interface SslCheckResponse {
     validUntil?: string
 }
 
-export default function checkSslCertificate(obj: UrlObject): Promise<SslCheckResponse> {
+export function checkSslCertificate(obj: UrlObject): Promise<SslCheckResponse> {
     return new Promise<SslCheckResponse>(resolve => {
         if (!obj.hostname || obj.hostname === '') {
             resolve({ error: 'Host missing', originalObject: obj, valid: false })

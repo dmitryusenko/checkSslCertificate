@@ -19,9 +19,9 @@ $ yarn add @dmitryusenko/checksslcertificate
 
 ## Usage
 ```js
-import checkSslCertificate from '@dmitryusenko/checksslcertificate'
+import { checkSslCertificate } from '@dmitryusenko/checksslcertificate'
 // or 
-// const checkSslCertificate = require('@dmitryusenko/checksslcertificate').default
+// const { checkSslCertificate } = require('@dmitryusenko/checksslcertificate')
 
 checkSslCertificate({hostname: 'github.com'}).then(res => {
    console.log(res)
